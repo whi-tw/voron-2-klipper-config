@@ -13,7 +13,7 @@ samples_result: median
 samples_tolerance: 0.04
 samples_tolerance_retries: 3
 
-dock_position: 3.5,294,25
+dock_position: 3.5,295,25
 #   The physical position of the probe dock relative to the origin of
 #   the bed. The coordinates are specified as a comma separated x, y, z
 #   list of values. Certain dock designs are independent of the z axis.
