@@ -2,12 +2,13 @@
 description: Purge then scrub the nozzle, without moves between them
 gcode:
     {% set restore = params.RESTORE | default(1) %}
+    {% set purge_length = params.PURGE_LENGTH | default(80) | float %}
 
     {% set move_speed = 300 %}
 
     SAVE_GCODE_STATE NAME=purge_scrub_state
 
-    PURGE PRE_SCRUB=1
+    PURGE LENGTH={purge_length} PRE_SCRUB=1
     SCRUB_NOZZLE PASSES=5 POST_PURGE=1
 
     RESTORE_GCODE_STATE NAME=purge_scrub_state MOVE={restore} MOVE_SPEED={move_speed * 60}
